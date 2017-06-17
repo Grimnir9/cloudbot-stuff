@@ -73,7 +73,7 @@ def litecoin(message):
 
 
 @hook.command("eth", "ethereum", autohelp=False)
-def litecoin(message):
+def ethereum(message):
     """- gets ethereum exchange rate from BTC-E"""
     response = requests.get("https://btc-e.com/api/2/eth_usd/ticker")
     if response.status_code != requests.codes.ok:
@@ -87,7 +87,7 @@ def litecoin(message):
 
 
 @hook.command("dope", "dopecoin", autohelp=False)
-def dogecoin(message):
+def dopecoin(message):
     """- gets dopecoin exchange rate from CryptoCompare"""
     response = requests.get("https://min-api.cryptocompare.com/data/pricemulti?fsyms=DOPE&tsyms=BTC,USD")
     if response.status_code != requests.codes.ok:
@@ -99,7 +99,7 @@ def dogecoin(message):
 
 
 @hook.command("bob", "dobbscoin", autohelp=False)
-def dogecoin(message):
+def dobbscoin(message):
     """- gets dobbscoin exchange rate from CryptoCompare"""
     response = requests.get("https://min-api.cryptocompare.com/data/pricemulti?fsyms=BOB&tsyms=BTC,USD")
     if response.status_code != requests.codes.ok:
