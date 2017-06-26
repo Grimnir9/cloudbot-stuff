@@ -3,10 +3,11 @@ import re
 from bs4 import BeautifulSoup
 from cloudbot import hook
 
-# This will match ANY we url including reddit, twitch, etc... Some additional work needs to go into
+# This will match ANY we url including youtube, reddit, twitch, etc... Some additional work needs to go into
 # not sending the web request etc if the match also matches an existing web regex.
 
-# 2017-06-26 Modified to exclude YouTube urls as they are handled by youtube.py. Also eliminated at link.
+# 2017-06-26 Modified to exclude YouTube and twitter urls as they are handled by other modules. Also eliminated at link.
+
 
 url_re = re.compile('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
 
@@ -18,6 +19,6 @@ def print_url_title(match):
     html = BeautifulSoup(r.text)
     title = html.title.text
     # out = "Title: {} at: {}".format(title, r.url)
-    if 'youtu' not in r.url:  #exclude YouTube URL's
+    if 'youtu' not in r.url and 'twitter' not in r.url:  #exclude YouTube URL's
         out = "Title: {}".format(title)
         return out
