@@ -6,9 +6,6 @@ from cloudbot import hook
 import urllib
 import urllib.request
 
-url = "http://38.135.36.125:7359/7.html"
-
-
 @hook.command("rlmradio", autohelp=False)
 def rlmradio(text):
 
