@@ -11,7 +11,7 @@ def rlmradio(text):
 
     url = "http://38.135.36.125:7359/7.html"
     html = urllib.request.urlopen(url).read()
-    htmlout = html[28:-15]
+    htmlout = html[28:-14]
     pw_bytes = htmlout.decode("utf-8")
     filtered = pw_bytes.replace("&apos;", "'")
     filtered = "Now on the RLM Radio Stream: " + filtered
